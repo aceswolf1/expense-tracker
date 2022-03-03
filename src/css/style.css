@@ -1,0 +1,145 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap");
+
+body {
+	margin-top: 25px;
+	font-family: "Montserrat", sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	background: rgb(231, 230, 232);
+	background: linear-gradient(
+		30deg,
+		rgba(231, 230, 232, 1) 0%,
+		rgba(246, 246, 246, 1) 51%,
+		rgba(251, 251, 251, 1) 100%
+	);
+}
+
+.title {
+	text-align: center;
+	margin-bottom: 32px;
+	color: rgb(167, 31, 251);
+	text-transform: uppercase;
+}
+
+.container {
+	min-width: 1280px;
+	background-color: white;
+	padding: 24px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 25px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#exp-form {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 20px;
+	padding: 24px 16px;
+}
+
+.expense-container {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	border: 1px solid rgb(202, 202, 202);
+	padding: 28px;
+	border-radius: 15px;
+}
+
+.expense-container span {
+	font-size: 1rem;
+	text-transform: uppercase;
+	margin-bottom: 8px;
+	font-weight: bold;
+	color: rgba(170, 31, 251, 0.575);
+}
+
+.expense-container input[type="text"] {
+	height: 15px;
+	padding: 10px 15px;
+	border-radius: 50px;
+	border: 1px solid rgb(226, 203, 245);
+	text-align: center;
+	color: rgb(160, 49, 251);
+	font-family: inherit;
+	font-size: 1.2rem;
+}
+
+.calcular-btn {
+	border: none;
+	padding: 16px 20px;
+	background-color: rgb(160, 49, 251);
+	color: white;
+	font-family: inherit;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 24px;
+	cursor: pointer;
+}
+
+.calcular-btn:active {
+	transform: scale(0.9);
+}
+
+.calcular-btn:hover {
+	background-color: rgb(195, 126, 251);
+}
+
+.result {
+	display: grid;
+	grid-template-areas: 
+        "aa bb cc"
+        "dd ee ff";
+	gap: 25px;
+	text-align: center;
+}
+
+.box {
+	background-color: rgb(252, 249, 255);
+	box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
+	padding: 24px;
+    border-radius: 15px;
+	color: white;
+}
+
+.box h3 {
+	padding-bottom: 15px;
+}
+
+.box i {
+    font-size: 2rem;
+    color: rgb(228, 184, 253);
+    margin-bottom: 20px;
+}
+
+.total {
+	grid-area: aa;
+}
+
+.promedio {
+	grid-area: bb;
+}
+
+.moda {
+	grid-area: cc;
+}
+
+.mediana {
+	grid-area: dd;
+}
+
+.mayor-mes {
+	grid-area: ff;
+}

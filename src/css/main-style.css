@@ -1,0 +1,89 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.navbar {
+	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+}
+
+.menu-vertical {
+	border-right: 1px solid rgb(238, 238, 238);
+	height: 100%;
+}
+
+.meses-titulo {
+	border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.mes-input {
+	border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+#agregar-gasto-btn {
+	margin-top: 46px;
+}
+
+.tabla-mes {
+	width: 98.5%;
+	table-layout: fixed;
+}
+
+.contenedor-resultados {
+	width: 100%;
+}
+#gastos-totales {
+	background-color: hsl(171, 100%, 41%);
+}
+
+#promedio-total {
+	background-color: hsl(204, 86%, 53%);
+}
+
+#mediana-total {
+	background-color: hsl(141, 71%, 48%);
+}
+
+#gasto-costoso {
+	background-color: hsl(348deg 100% 81%);
+}
+
+#mes-seleccionado-texto {
+	width: 60%;
+	background-color: rgb(50, 149, 241);
+	padding: 4px 15px;
+	border-radius: 50px;
+	color: white;
+}
+
+.is-hidden {
+	display: none;
+}
+
+.new-input {
+	width: initial;
+}
+
+.agregar-gasto {
+	text-align: center;
+	padding-left:34px;
+	border-left: 1px solid rgb(238, 238, 238);
+}
+
+.agregar-gasto-titulo p {
+	margin: 0;
+}
+
+.seleccionar-mes {
+	text-align: center;
+    display: flex !important;
+    justify-content: center;
+}
+
+.on-edit-btn-ok {
+	margin-right: 10px;
+}
+
+.box {
+	color: white;
+}

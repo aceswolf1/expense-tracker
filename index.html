@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+		/>
+		<link rel="stylesheet" href="src/css/main-style.css" />
+		<title>Gestor de gastos</title>
+	</head>
+	<body>
+		<main class="main-calc">
+			<div class="columns">
+				<div class="column is-12">
+					<nav
+						class="navbar p-3"
+						role="navigation"
+						aria-label="main navigation"
+					>
+						<div class="navbar-brand">
+							<a class="navbar-item" href="https://bulma.io">
+								<span>CACE</span>
+							</a>
+
+							<a
+								role="button"
+								class="navbar-burger"
+								aria-label="menu"
+								aria-expanded="false"
+								data-target="navbarBasicExample"
+							>
+								<span aria-hidden="true"></span>
+								<span aria-hidden="true"></span>
+								<span aria-hidden="true"></span>
+							</a>
+						</div>
+
+						<div id="navbarBasicExample" class="navbar-menu">
+							<div class="navbar-start">
+								<a class="navbar-item"> Home </a>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<div class="columns">
+				<div class="column is-2">
+					<aside class="menu-vertical p-5">
+						<p class="menu-label">Opciones</p>
+						<ul class="menu-list">
+							<li><a>Meses</a></li>
+							<li><a>Acumulado</a></li>
+						</ul>
+					</aside>
+				</div>
+				<div class="column is-10">
+					<div class="titulo-general columns is-12">
+						<div class="column is-12">
+							<div class="titulo-ingresos">
+								<h1 class="meses-titulo pb-4 is-size-4 is-uppercase">Calcula tus gastos mensuales</h1>
+							</div>
+						</div>
+					</div>
+					<div class="mes-input columns mb-5 pb-3">
+						<div class="seleccionar-mes column is-2 is-flex is-flex-wrap-wrap is-align-content-center">
+							<p id="mes-seleccionado-texto" class="mb-3 is-size-4 is-12">Enero</p>
+							<div class="selector-mes dropdown is-12">
+								<div class="dropdown-trigger">
+								  <button class="button selector-mes-btn" aria-haspopup="true" aria-controls="dropdown-menu">
+									<span>Selecciona un mes</span>
+									<span class="icon is-small">
+									  <i class="fas fa-angle-down" aria-hidden="true"></i>
+									</span>
+								  </button>
+								</div>
+								<div class="dropdown-menu" id="dropdown-menu" role="menu">
+								  <div id="seleccion-mes" class="dropdown-content"></div>
+								</div>
+							</div>
+						</div>
+						<div class="agregar-gasto columns is-9">
+							<div class="agregar-gasto-titulo column is-flex is-flex-wrap-wrap is-align-content-center">
+								<p class="is-size-5 has-text-weight-bold">Agrega un <br>gasto nuevo</p>
+							</div>
+							<div class="column is-flex is-flex-wrap-wrap is-align-content-center">
+								<p class="has-text-weight-bold mb-5">Nombre:</p>
+								<div id="gasto-nuevo-input-contenedor">
+									<input id="nombre-gasto-nuevo" class="input" type="text" placeholder="Nombre de tu gasto">
+								</div>
+							</div>
+							<div class="column is-flex is-flex-wrap-wrap is-align-content-center">
+								<p class="has-text-weight-bold mb-5">Costo:</p>
+								<div id="gasto-nuevo-valor-input-contenedor">
+									<input id="gasto-nuevo" class="input" type="text" placeholder="El costo">
+								</div>
+							</div>
+							<div class="column is-flex is-flex-wrap-wrap is-align-content-center">
+								<button id="agregar-gasto-btn" class="button is-primary">Agregar</button>
+							</div>
+						</div>
+					</div>
+					<div class="contenedor-resultados columns">
+						<div class="column is-3">
+							<div id="gastos-totales" class="box">
+								<p class="has-text-weight-bold has-text-centered">Gastos total del mes:</p>
+								<p id="gastos-totales-el" class="has-text-centered">$111,2334</p>
+							</div>							
+						</div>
+						<div class="column is-3">
+							<div id="promedio-total" class="box">
+								<p class="has-text-weight-bold has-text-centered">Promedio de gastos del mes</p>
+								<p id="promedio-total-el" class="has-text-centered">$111,2334</p>
+							</div>							
+						</div>
+						<div class="column is-3">
+							<div id="mediana-total" class="box">
+								<p class="has-text-weight-bold has-text-centered">Mediana de gastos del mes</p>
+								<p id="mediana-total-el" class="has-text-centered">$111,2334</p>
+							</div>							
+						</div>
+						<div class="column is-3">
+							<div id="gasto-costoso" class="box">
+								<p class="has-text-weight-bold has-text-centered">Gasto más costoso:</p>
+								<p id="gasto-costoso-el" class="has-text-centered">$111,2334</p>
+							</div>							
+						</div>
+					</div>
+					<div class="contenedor-busqueda columns ">
+						<div class="search-container column is-3">
+							<p class="control has-icons-left has-icons-right">
+								<input id="busqueda" class="input" type="text" placeholder="Busqueda">
+								<span class="icon is-small is-left">
+									<i class="fas fa-search"></i>
+								</span>
+								<span class="icon is-small is-right">
+								  <i class="fas fa-check"></i>
+								</span>
+							  </p>
+						</div>
+						<div class="column-check-container ml-3 is-4 is-flex is-flex-wrap-wrap is-align-content-center">
+							<label class="checkbox">
+								<input type="checkbox">
+								Incluir todos los gastos
+							  </label>
+						</div>
+					</div>
+					<div class="contener-tabla columns">
+						<div class="column is-12 table-container">
+							<table id="tabla-mes" class="table tabla-mes table is-striped table is-bordered table is-hoverable">
+								<thead>
+								  <tr>
+									<th><abbr title="Position">ID</abbr></th>
+									<th>Nombre <i class="fas fa-sort"></i></th>
+									<th>Costo <i class="fas fa-sort"></i></th>
+									<th>Editar</th>
+									<th>Eliminar</th>
+								  </tr>
+								</thead>
+								<tfoot>
+								  <tr>
+									<th><abbr title="Position">ID</abbr></th>
+									<th>Nombre</th>
+									<th>Costo</th>
+									<th> 
+										Editar
+									</th>
+									<th>
+										Eliminar
+									</th>
+								  </tr>
+								</tfoot>
+								<tbody id="tabla-mes-cuerpo">
+								</tbody>
+							  </table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script src="src/scripts/utilities.js"></script>
+		<script src="src/scripts/gastos.js"></script>
+		<script src="src/scripts/GestorGastos.js"></script>
+		<script src="src/scripts/UiHandler.js"></script>
+		<script src="src/scripts/main.js"></script>
+	</body>
+</html>
