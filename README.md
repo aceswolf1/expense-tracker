@@ -22,3 +22,10 @@ Fonts: https://fonts.google.com/
 # Setup
 
 There is no special setup to run this app, just download/pull everything and click on index.html
+
+# Movile Version
+
+The mobile version was not contamplate for this excercise.
+
+# demo
+You can access the live version here: https://aceswolf1.github.io/expense-tracker/ 
